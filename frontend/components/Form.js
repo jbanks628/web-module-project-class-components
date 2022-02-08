@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export default class Form extends React.Component {
   render() {
     return (
-      <div>
-        Form
-      </div>
-    )
+      <form>
+        <input placeholder="todo..." name="todo" type="text" />
+      </form>
+    );
   }
 }
