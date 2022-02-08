@@ -16,6 +16,7 @@ export default class App extends React.Component {
         completed: false,
       },
     ],
+    textInput: "",
   };
   handleAddClick = (evt) => {
     this.setState({
@@ -32,11 +33,12 @@ export default class App extends React.Component {
     });
   };
   render() {
+    console.log(this.state);
     return (
       <div>
         <h1>Todo List App</h1>
-        <Form />
         <TodoList task={this.state} />
+        <Form textInput={this.state.textInput} />
         <button onClick={this.handleAddClick}>Add task</button>
         <button onClick={this.handleClearClick}>Clear Completed</button>
       </div>
