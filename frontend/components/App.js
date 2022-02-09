@@ -17,6 +17,7 @@ export default class App extends React.Component {
       },
     ],
     textInput: "",
+    error: "",
   };
   handleAddClick = () => {
     this.setState({
