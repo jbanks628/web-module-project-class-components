@@ -1,8 +1,15 @@
 import React from "react";
 
+const initialForm = {
+  textInput: "",
+};
+
 export default class Form extends React.Component {
+  state = initialForm;
+
   onChange = (evt) => {
     const { value, id } = evt.target;
+    console.log(value, id);
     this.setState({
       ...this.state,
       [id]: value,
@@ -13,10 +20,11 @@ export default class Form extends React.Component {
       <form>
         <input
           onChange={this.onChange}
-          value={this.props.textInput}
+          value={this.state.textInput}
           placeholder="add task"
-          name="todo"
+          // name="todo"
           type="text"
+          id="textInput"
         />
         <input type="submit" placeholder="Add" />
       </form>

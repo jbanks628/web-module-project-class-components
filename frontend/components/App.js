@@ -6,24 +6,24 @@ export default class App extends React.Component {
   state = {
     list: [
       {
-        task: "Make bed",
-        id: 1,
+        name: "Organize Garage",
+        id: 1528817077286, // could look different, you could use a timestamp to generate it
         completed: false,
       },
       {
-        task: "Do dishes",
-        id: 2,
+        name: "Bake Cookies",
+        id: 1528817084358,
         completed: false,
       },
     ],
     textInput: "",
   };
-  handleAddClick = (evt) => {
+  handleAddClick = () => {
     this.setState({
       ...this.state,
     });
   };
-  handleClearClick = (evt) => {
+  handleClearClick = () => {
     const newTodo = this.state.list.filter((item) => {
       return !item.completed;
     });
@@ -39,7 +39,6 @@ export default class App extends React.Component {
         <h1>Todo List App</h1>
         <TodoList task={this.state} />
         <Form textInput={this.state.textInput} />
-        <button onClick={this.handleAddClick}>Add task</button>
         <button onClick={this.handleClearClick}>Clear Completed</button>
       </div>
     );
